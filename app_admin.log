@@ -1,0 +1,36 @@
+[2025-07-10 08:15:22] INFO  auth: priya.sharma logged in from 10.0.5.22 (session: sess_pr_001)
+[2025-07-10 08:20:00] INFO  dashboard: priya.sharma viewed system health dashboard
+[2025-07-10 08:45:10] INFO  auth: amit.verma logged in from 10.0.5.35 (session: sess_am_001)
+[2025-07-10 08:50:00] INFO  reports: amit.verma generated monthly uptime report
+[2025-07-10 10:00:05] INFO  auth: deepak.nair logged in from 10.0.5.40 (session: sess_dk_001)
+[2025-07-10 10:10:00] INFO  settings: deepak.nair updated deployment pipeline config
+[2025-07-10 12:55:00] WARN  auth: rahul.kapoor failed login from 203.0.113.55 (invalid password)
+[2025-07-10 12:57:00] WARN  auth: rahul.kapoor failed login from 203.0.113.55 (invalid password)
+[2025-07-10 13:00:30] INFO  auth: rahul.kapoor logged in from 203.0.113.55 (session: sess_rk_001)
+[2025-07-10 13:02:00] INFO  admin: rahul.kapoor accessed user management panel
+[2025-07-10 13:05:00] INFO  admin: rahul.kapoor viewed full user directory (312 users)
+[2025-07-10 13:08:00] INFO  admin: rahul.kapoor viewed API key management page
+[2025-07-10 13:10:00] WARN  admin: rahul.kapoor exported API key list to CSV
+[2025-07-10 13:12:00] INFO  admin: rahul.kapoor accessed role permissions matrix
+[2025-07-10 13:14:00] WARN  admin: rahul.kapoor created service account 'svc-backup-admin' with admin role
+[2025-07-10 13:18:00] WARN  data: rahul.kapoor initiated bulk export: customers table (45,231 records)
+[2025-07-10 13:19:00] WARN  data: rahul.kapoor initiated bulk export: customer_emails table (45,231 records)
+[2025-07-10 13:20:00] WARN  data: rahul.kapoor initiated bulk export: financial_transactions table (128,445 records)
+[2025-07-10 13:22:00] WARN  data: rahul.kapoor downloaded export: customers_full_dump_2025.csv (24.5 MB)
+[2025-07-10 13:23:00] WARN  data: rahul.kapoor downloaded export: customer_emails_2025.csv (8.2 MB)
+[2025-07-10 13:24:00] WARN  data: rahul.kapoor downloaded export: financial_transactions_2025.csv (156.3 MB)
+[2025-07-10 13:26:00] WARN  admin: rahul.kapoor disabled audit notifications for admin actions
+[2025-07-10 13:28:00] WARN  admin: rahul.kapoor modified data retention policy: 90 days -> 7 days
+[2025-07-10 13:30:00] INFO  auth: rahul.kapoor session ended (session: sess_rk_001)
+[2025-07-10 13:45:15] INFO  auth: amit.verma logged in from 10.0.5.35 (session: sess_am_002)
+[2025-07-10 14:00:00] INFO  reports: amit.verma generated deployment status report
+[2025-07-10 14:30:05] INFO  auth: deepak.nair logged in from 10.0.5.40 (session: sess_dk_002)
+[2025-07-10 14:35:00] INFO  settings: deepak.nair updated staging environment config
+[2025-07-10 15:00:10] INFO  auth: priya.sharma logged in from 10.0.5.22 (session: sess_pr_002)
+[2025-07-10 15:05:00] INFO  dashboard: priya.sharma viewed deployment metrics
+[2025-07-10 22:10:00] WARN  auth: unknown user attempted login as 'svc-backup-admin' from 198.51.100.99
+[2025-07-10 22:12:00] INFO  auth: svc-backup-admin logged in from 198.51.100.99 (session: sess_sv_001)
+[2025-07-10 22:14:00] WARN  data: svc-backup-admin initiated bulk export: customer_phones table (45,231 records)
+[2025-07-10 22:15:00] WARN  data: svc-backup-admin downloaded export: customer_phones_2025.csv (12.1 MB)
+[2025-07-10 22:17:00] WARN  admin: svc-backup-admin deleted service account 'svc-backup-admin'
+[2025-07-10 22:17:30] INFO  auth: svc-backup-admin session terminated (account deleted)

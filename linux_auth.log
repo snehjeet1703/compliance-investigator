@@ -1,0 +1,45 @@
+Sep 15 08:00:01 webserver01 sshd[10234]: Accepted publickey for priya from 10.0.5.22 port 52341 ssh2
+Sep 15 08:00:01 webserver01 sshd[10234]: pam_unix(sshd:session): session opened for user priya(uid=1001) by (uid=0)
+Sep 15 08:05:00 webserver01 sudo: priya : TTY=pts/0 ; PWD=/home/priya ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 15 08:10:00 webserver01 sshd[10240]: Accepted publickey for deepak from 10.0.5.40 port 52455 ssh2
+Sep 15 08:10:00 webserver01 sshd[10240]: pam_unix(sshd:session): session opened for user deepak(uid=1002) by (uid=0)
+Sep 15 08:12:00 webserver01 sudo: deepak : TTY=pts/1 ; PWD=/home/deepak ; USER=root ; COMMAND=/usr/bin/systemctl restart app-backend
+Sep 15 08:30:00 webserver01 sshd[10250]: Accepted publickey for amit from 10.0.5.35 port 52500 ssh2
+Sep 15 08:30:00 webserver01 sshd[10250]: pam_unix(sshd:session): session opened for user amit(uid=1003) by (uid=0)
+Sep 15 08:35:00 webserver01 sudo: amit : TTY=pts/2 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /var/log/app/error.log
+Sep 15 09:00:00 webserver01 sshd[10300]: Failed password for root from 185.220.101.45 port 43210 ssh2
+Sep 15 09:00:03 webserver01 sshd[10301]: Failed password for root from 185.220.101.45 port 43211 ssh2
+Sep 15 09:00:05 webserver01 sshd[10302]: Failed password for root from 185.220.101.45 port 43212 ssh2
+Sep 15 09:00:08 webserver01 sshd[10303]: Failed password for root from 185.220.101.45 port 43213 ssh2
+Sep 15 09:00:10 webserver01 sshd[10304]: Failed password for root from 185.220.101.45 port 43214 ssh2
+Sep 15 09:00:13 webserver01 sshd[10305]: Failed password for admin from 185.220.101.45 port 43215 ssh2
+Sep 15 09:00:15 webserver01 sshd[10306]: Failed password for admin from 185.220.101.45 port 43216 ssh2
+Sep 15 09:00:18 webserver01 sshd[10307]: Failed password for ubuntu from 185.220.101.45 port 43217 ssh2
+Sep 15 09:00:20 webserver01 sshd[10308]: Failed password for ubuntu from 185.220.101.45 port 43218 ssh2
+Sep 15 09:00:23 webserver01 sshd[10309]: Failed password for deploy from 185.220.101.45 port 43219 ssh2
+Sep 15 09:00:25 webserver01 sshd[10310]: Failed password for amit from 185.220.101.45 port 43220 ssh2
+Sep 15 09:00:28 webserver01 sshd[10311]: Accepted password for amit from 185.220.101.45 port 43221 ssh2
+Sep 15 09:00:28 webserver01 sshd[10311]: pam_unix(sshd:session): session opened for user amit(uid=1003) by (uid=0)
+Sep 15 09:01:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Sep 15 09:02:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /etc/passwd
+Sep 15 09:03:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/useradd -m -s /bin/bash backdoor-user
+Sep 15 09:03:30 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/usermod -aG sudo backdoor-user
+Sep 15 09:04:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/passwd backdoor-user
+Sep 15 09:05:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /var/lib/app/db-credentials.conf
+Sep 15 09:06:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /etc/app/api-keys.yaml
+Sep 15 09:07:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/tar czf /tmp/app-data.tar.gz /var/lib/app/data/
+Sep 15 09:08:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /home/priya/.ssh/id_rsa
+Sep 15 09:10:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/cat /home/deepak/.ssh/id_rsa
+Sep 15 09:12:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/systemctl stop auditd
+Sep 15 09:13:00 webserver01 sudo: amit : TTY=pts/3 ; PWD=/home/amit ; USER=root ; COMMAND=/usr/bin/truncate -s 0 /var/log/auth.log
+Sep 15 09:30:00 webserver01 sshd[10400]: Accepted publickey for priya from 10.0.5.22 port 52600 ssh2
+Sep 15 09:30:00 webserver01 sshd[10400]: pam_unix(sshd:session): session opened for user priya(uid=1001) by (uid=0)
+Sep 15 09:35:00 webserver01 sudo: priya : TTY=pts/4 ; PWD=/home/priya ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 15 10:00:00 webserver01 sshd[10410]: Accepted publickey for deepak from 10.0.5.40 port 52700 ssh2
+Sep 15 10:00:00 webserver01 sshd[10410]: pam_unix(sshd:session): session opened for user deepak(uid=1002) by (uid=0)
+Sep 15 10:05:00 webserver01 sudo: deepak : TTY=pts/5 ; PWD=/home/deepak ; USER=root ; COMMAND=/usr/bin/docker ps
+Sep 15 10:30:00 webserver01 sshd[10500]: Accepted password for backdoor-user from 198.51.100.99 port 44100 ssh2
+Sep 15 10:30:00 webserver01 sshd[10500]: pam_unix(sshd:session): session opened for user backdoor-user(uid=1004) by (uid=0)
+Sep 15 10:31:00 webserver01 sudo: backdoor-user : TTY=pts/6 ; PWD=/home/backdoor-user ; USER=root ; COMMAND=/usr/bin/cat /var/lib/app/db-credentials.conf
+Sep 15 10:32:00 webserver01 sudo: backdoor-user : TTY=pts/6 ; PWD=/home/backdoor-user ; USER=root ; COMMAND=/usr/bin/apt install nmap
+Sep 15 10:35:00 webserver01 sudo: backdoor-user : TTY=pts/6 ; PWD=/home/backdoor-user ; USER=root ; COMMAND=/usr/bin/nmap -sV 10.0.5.0/24

@@ -1,0 +1,65 @@
+{
+  "framework": "SOC 2 (Trust Services Criteria)",
+  "mappings": {
+    "LOGIN_WITHOUT_MFA": [
+      {
+        "control": "CC6.1",
+        "title": "Logical Access Security",
+        "requirement": "The entity implements logical access security software, infrastructure, and architectures over protected information assets to protect them from security events.",
+        "failure": "Console access was permitted without multi-factor authentication."
+      }
+    ],
+    "PRIVILEGE_ESCALATION": [
+      {
+        "control": "CC6.2",
+        "title": "User Authentication",
+        "requirement": "Prior to issuing system credentials and granting system access, the entity registers and authorizes new internal and external users.",
+        "failure": "A new user account was created and granted administrator access without proper registration and authorization."
+      },
+      {
+        "control": "CC6.3",
+        "title": "Access Management",
+        "requirement": "The entity authorizes, modifies, or removes access to data, software, functions, and other protected information assets based on roles, responsibilities, or the system design and changes.",
+        "failure": "Administrator access was granted outside established role-based access management processes."
+      }
+    ],
+    "AUDIT_TRAIL_TAMPERING": [
+      {
+        "control": "CC7.2",
+        "title": "System Monitoring",
+        "requirement": "The entity monitors system components and the operation of those components for anomalies that are indicative of malicious acts, natural disasters, and errors affecting the entity's ability to meet its objectives.",
+        "failure": "CloudTrail logging was disabled and deleted, destroying the monitoring capability."
+      }
+    ],
+    "SENSITIVE_DATA_ACCESS": [
+      {
+        "control": "CC6.1",
+        "title": "Logical Access Security",
+        "requirement": "The entity implements logical access security software, infrastructure, and architectures over protected information assets.",
+        "failure": "Sensitive data was accessed by an unauthorized account without logical access controls preventing it."
+      },
+      {
+        "control": "CC6.8",
+        "title": "Unauthorized Access Prevention",
+        "requirement": "The entity implements controls to prevent or detect and act upon the introduction of unauthorized or malicious software.",
+        "failure": "Unauthorized access to PII and financial data was not prevented by existing controls."
+      }
+    ],
+    "UNUSUAL_HOURS": [
+      {
+        "control": "CC7.2",
+        "title": "System Monitoring",
+        "requirement": "The entity monitors system components for anomalies indicative of malicious acts.",
+        "failure": "Unusual access patterns during off-hours were not detected by monitoring systems."
+      }
+    ],
+    "SELF_DELETION": [
+      {
+        "control": "CC6.3",
+        "title": "Access Management",
+        "requirement": "The entity authorizes, modifies, or removes access based on roles and responsibilities.",
+        "failure": "An account was able to delete itself without access management controls preventing it."
+      }
+    ]
+  }
+}

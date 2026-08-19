@@ -1,0 +1,35 @@
+{
+  "framework": "Digital Personal Data Protection Act, 2023 (India)",
+  "mappings": {
+    "SENSITIVE_DATA_ACCESS": [
+      {
+        "control": "Section 8(4)",
+        "title": "Reasonable Security Safeguards",
+        "requirement": "The Data Fiduciary shall protect personal data in its possession or under its control by taking reasonable security safeguards to prevent personal data breach.",
+        "failure": "Customer PII was accessed by an unauthorized account, indicating failure to implement reasonable security safeguards."
+      },
+      {
+        "control": "Section 8(6)",
+        "title": "Data Breach Notification",
+        "requirement": "In the event of a personal data breach, the Data Fiduciary shall give the Board and each affected Data Principal notice of such breach.",
+        "failure": "Access to customer PII data (full dump, emails, phone numbers) constitutes a potential personal data breach requiring notification."
+      }
+    ],
+    "AUDIT_TRAIL_TAMPERING": [
+      {
+        "control": "Section 8(4)",
+        "title": "Reasonable Security Safeguards",
+        "requirement": "The Data Fiduciary shall protect personal data by taking reasonable security safeguards to prevent personal data breach.",
+        "failure": "Destruction of audit trails indicates insufficient safeguards to protect the integrity of security monitoring systems."
+      }
+    ],
+    "SELF_DELETION": [
+      {
+        "control": "Section 8(4)",
+        "title": "Reasonable Security Safeguards",
+        "requirement": "The Data Fiduciary shall protect personal data by taking reasonable security safeguards.",
+        "failure": "Ability of an account to self-delete after accessing personal data indicates inadequate identity lifecycle controls."
+      }
+    ]
+  }
+}

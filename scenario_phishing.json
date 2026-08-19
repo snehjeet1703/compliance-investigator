@@ -1,0 +1,373 @@
+{
+  "Records": [
+    {
+      "eventTime": "2025-08-12T08:00:00Z",
+      "eventName": "ConsoleLogin",
+      "eventSource": "signin.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "responseElements": { "ConsoleLogin": "Success" },
+      "additionalEventData": { "MFAUsed": "Yes" }
+    },
+    {
+      "eventTime": "2025-08-12T08:05:00Z",
+      "eventName": "DescribeInstances",
+      "eventSource": "ec2.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "instancesSet": {} }
+    },
+    {
+      "eventTime": "2025-08-12T08:10:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/sprint-plan.md" }
+    },
+    {
+      "eventTime": "2025-08-12T08:30:00Z",
+      "eventName": "ConsoleLogin",
+      "eventSource": "signin.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "responseElements": { "ConsoleLogin": "Success" },
+      "additionalEventData": { "MFAUsed": "Yes" }
+    },
+    {
+      "eventTime": "2025-08-12T08:35:00Z",
+      "eventName": "DescribeDBInstances",
+      "eventSource": "rds.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": {}
+    },
+    {
+      "eventTime": "2025-08-12T08:45:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/db-migration-guide.md" }
+    },
+    {
+      "eventTime": "2025-08-12T09:00:00Z",
+      "eventName": "ConsoleLogin",
+      "eventSource": "signin.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.40",
+      "userIdentity": { "type": "IAMUser", "userName": "deepak.nair" },
+      "responseElements": { "ConsoleLogin": "Success" },
+      "additionalEventData": { "MFAUsed": "Yes" }
+    },
+    {
+      "eventTime": "2025-08-12T09:05:00Z",
+      "eventName": "CreateStack",
+      "eventSource": "cloudformation.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.40",
+      "userIdentity": { "type": "IAMUser", "userName": "deepak.nair" },
+      "requestParameters": { "stackName": "prod-api-v3" }
+    },
+    {
+      "eventTime": "2025-08-12T09:30:00Z",
+      "eventName": "PutObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/api-docs-v3.md" }
+    },
+    {
+      "eventTime": "2025-08-12T10:00:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/architecture-v3.png" }
+    },
+    {
+      "eventTime": "2025-08-12T10:30:00Z",
+      "eventName": "DescribeAlarms",
+      "eventSource": "monitoring.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": {}
+    },
+    {
+      "eventTime": "2025-08-12T11:00:00Z",
+      "eventName": "UpdateStack",
+      "eventSource": "cloudformation.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.40",
+      "userIdentity": { "type": "IAMUser", "userName": "deepak.nair" },
+      "requestParameters": { "stackName": "prod-api-v3" }
+    },
+    {
+      "eventTime": "2025-08-12T11:30:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/deployment-checklist.md" }
+    },
+    {
+      "eventTime": "2025-08-12T14:02:00Z",
+      "eventName": "ConsoleLogin",
+      "eventSource": "signin.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "responseElements": { "ConsoleLogin": "Success" },
+      "additionalEventData": { "MFAUsed": "No" }
+    },
+    {
+      "eventTime": "2025-08-12T14:03:00Z",
+      "eventName": "ListBuckets",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": null
+    },
+    {
+      "eventTime": "2025-08-12T14:04:00Z",
+      "eventName": "ListUsers",
+      "eventSource": "iam.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": null
+    },
+    {
+      "eventTime": "2025-08-12T14:05:00Z",
+      "eventName": "ListRoles",
+      "eventSource": "iam.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": null
+    },
+    {
+      "eventTime": "2025-08-12T14:06:30Z",
+      "eventName": "GetBucketPolicy",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "customer-pii-data" }
+    },
+    {
+      "eventTime": "2025-08-12T14:07:00Z",
+      "eventName": "GetBucketPolicy",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "financial-reports" }
+    },
+    {
+      "eventTime": "2025-08-12T14:10:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "customer-pii-data", "key": "exports/customers_full_dump_2025.csv" }
+    },
+    {
+      "eventTime": "2025-08-12T14:11:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "customer-pii-data", "key": "exports/customers_emails_2025.csv" }
+    },
+    {
+      "eventTime": "2025-08-12T14:12:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "financial-reports", "key": "2025/Q2/revenue-report.xlsx" }
+    },
+    {
+      "eventTime": "2025-08-12T14:13:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "financial-reports", "key": "2025/Q2/investor-deck.pptx" }
+    },
+    {
+      "eventTime": "2025-08-12T14:15:00Z",
+      "eventName": "CreateAccessKey",
+      "eventSource": "iam.amazonaws.com",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.45",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "userName": "priya.sharma" },
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIACOMPROMISED12345",
+          "status": "Active",
+          "userName": "priya.sharma"
+        }
+      }
+    },
+    {
+      "eventTime": "2025-08-12T14:20:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/release-notes-v3.md" }
+    },
+    {
+      "eventTime": "2025-08-12T14:25:00Z",
+      "eventName": "PutObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/release-notes-v3-updated.md" }
+    },
+    {
+      "eventTime": "2025-08-12T14:30:00Z",
+      "eventName": "DescribeInstances",
+      "eventSource": "ec2.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": { "instancesSet": {} }
+    },
+    {
+      "eventTime": "2025-08-12T14:45:00Z",
+      "eventName": "RunInstances",
+      "eventSource": "ec2.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": { "instanceType": "t3.medium", "imageId": "ami-0abcdef1234567890" }
+    },
+    {
+      "eventTime": "2025-08-12T15:00:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.40",
+      "userIdentity": { "type": "IAMUser", "userName": "deepak.nair" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/config-templates.yaml" }
+    },
+    {
+      "eventTime": "2025-08-12T15:30:00Z",
+      "eventName": "DescribeSecurityGroups",
+      "eventSource": "ec2.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": {}
+    },
+    {
+      "eventTime": "2025-08-12T16:00:00Z",
+      "eventName": "PutObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.22",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "internal-docs", "key": "engineering/test-results-aug.md" }
+    },
+    {
+      "eventTime": "2025-08-12T16:30:00Z",
+      "eventName": "StopInstances",
+      "eventSource": "ec2.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.35",
+      "userIdentity": { "type": "IAMUser", "userName": "amit.verma" },
+      "requestParameters": { "instancesSet": { "items": [{ "instanceId": "i-0abc123def456" }] } }
+    },
+    {
+      "eventTime": "2025-08-12T17:00:00Z",
+      "eventName": "DeleteStack",
+      "eventSource": "cloudformation.amazonaws.com",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.5.40",
+      "userIdentity": { "type": "IAMUser", "userName": "deepak.nair" },
+      "requestParameters": { "stackName": "old-staging-stack" }
+    },
+    {
+      "eventTime": "2025-08-12T20:45:00Z",
+      "eventName": "ListBuckets",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": null
+    },
+    {
+      "eventTime": "2025-08-12T20:46:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "customer-pii-data", "key": "exports/customers_phone_numbers_2025.csv" }
+    },
+    {
+      "eventTime": "2025-08-12T20:47:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "customer-pii-data", "key": "exports/customers_addresses_2025.csv" }
+    },
+    {
+      "eventTime": "2025-08-12T20:48:00Z",
+      "eventName": "GetObject",
+      "eventSource": "s3.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "bucketName": "payroll-data", "key": "2025/august/salary-details.csv" }
+    },
+    {
+      "eventTime": "2025-08-12T20:50:00Z",
+      "eventName": "ListAccessKeys",
+      "eventSource": "iam.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "userName": "priya.sharma" }
+    },
+    {
+      "eventTime": "2025-08-12T20:51:00Z",
+      "eventName": "CreateAccessKey",
+      "eventSource": "iam.amazonaws.com",
+      "awsRegion": "eu-west-1",
+      "sourceIPAddress": "91.132.147.88",
+      "userIdentity": { "type": "IAMUser", "userName": "priya.sharma" },
+      "requestParameters": { "userName": "priya.sharma" },
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIACOMPROMISED67890",
+          "status": "Active",
+          "userName": "priya.sharma"
+        }
+      }
+    }
+  ]
+}

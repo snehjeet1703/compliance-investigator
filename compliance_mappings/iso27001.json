@@ -1,0 +1,89 @@
+{
+  "framework": "ISO 27001:2022",
+  "mappings": {
+    "LOGIN_WITHOUT_MFA": [
+      {
+        "control": "A.8.5",
+        "title": "Secure Authentication",
+        "requirement": "Secure authentication technologies and procedures shall be established and implemented based on information access restrictions and the topic-specific policy on access control.",
+        "failure": "Console login was permitted without multi-factor authentication."
+      }
+    ],
+    "PRIVILEGE_ESCALATION": [
+      {
+        "control": "A.5.15",
+        "title": "Access Control",
+        "requirement": "Rules to control physical and logical access to information and other associated assets shall be established and implemented based on business and information security requirements.",
+        "failure": "A new account was created and granted administrator privileges without authorization controls."
+      },
+      {
+        "control": "A.5.18",
+        "title": "Access Rights",
+        "requirement": "Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organization's topic-specific policy on and rules for access control.",
+        "failure": "Administrator access rights were provisioned outside the established access management process."
+      },
+      {
+        "control": "A.8.2",
+        "title": "Privileged Access Rights",
+        "requirement": "The allocation and use of privileged access rights shall be restricted and managed.",
+        "failure": "AdministratorAccess policy was attached without privileged access management controls."
+      }
+    ],
+    "AUDIT_TRAIL_TAMPERING": [
+      {
+        "control": "A.8.15",
+        "title": "Logging",
+        "requirement": "Logs that record activities, exceptions, faults and other relevant events shall be produced, stored, protected and analysed.",
+        "failure": "CloudTrail logging was stopped and the trail was deleted, destroying audit records."
+      },
+      {
+        "control": "A.8.17",
+        "title": "Clock Synchronization",
+        "requirement": "The clocks of information processing systems used by the organization shall be synchronized to approved time sources.",
+        "failure": "Deletion of logging infrastructure undermines the integrity of time-synchronized audit records."
+      }
+    ],
+    "SENSITIVE_DATA_ACCESS": [
+      {
+        "control": "A.5.12",
+        "title": "Classification of Information",
+        "requirement": "Information shall be classified according to the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements.",
+        "failure": "PII and financial data was accessed without classification-based access restrictions."
+      },
+      {
+        "control": "A.8.3",
+        "title": "Information Access Restriction",
+        "requirement": "Access to information and other associated assets shall be restricted in accordance with the established topic-specific policy on access control.",
+        "failure": "Sensitive data buckets (customer PII, financial reports, payroll) were accessed by an unauthorized account."
+      },
+      {
+        "control": "A.5.34",
+        "title": "Privacy and Protection of PII",
+        "requirement": "The organization shall identify and meet the requirements regarding the preservation of privacy and protection of PII according to applicable laws, regulations and contractual requirements.",
+        "failure": "Customer PII was accessed and potentially exfiltrated without authorization."
+      }
+    ],
+    "UNUSUAL_HOURS": [
+      {
+        "control": "A.8.16",
+        "title": "Monitoring Activities",
+        "requirement": "Networks, systems and applications shall be monitored for anomalous behaviour and appropriate actions taken to evaluate potential information security incidents.",
+        "failure": "Activity during unusual hours was not detected or prevented by monitoring controls."
+      }
+    ],
+    "SELF_DELETION": [
+      {
+        "control": "A.8.15",
+        "title": "Logging",
+        "requirement": "Logs that record activities, exceptions, faults and other relevant events shall be produced, stored, protected and analysed.",
+        "failure": "An account was able to delete itself, potentially erasing evidence of unauthorized activity."
+      },
+      {
+        "control": "A.5.36",
+        "title": "Compliance with Policies, Rules and Standards",
+        "requirement": "Compliance with the organization's established information security policy, topic-specific policies, rules and standards shall be regularly reviewed.",
+        "failure": "Self-deletion of accounts indicates lack of enforcement of identity lifecycle controls."
+      }
+    ]
+  }
+}
