@@ -1,0 +1,55 @@
+{
+    "name": "Azure Activity Log",
+    "file_format": "json",
+    "json_root": "records",
+    "source_label": "Azure",
+    "timestamp": {
+        "field": "time"
+    },
+    "fields": {
+        "actor": {
+            "field": "identity.claims.name",
+            "fallbacks": [
+                {"field": "caller"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "operationName",
+            "replace": {"Microsoft.": "", "/": "."}
+        },
+        "service": {
+            "field": "resourceProvider",
+            "replace": {"Microsoft.": ""}
+        },
+        "source_ip": {
+            "field": "callerIpAddress",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "location",
+            "default": "unknown"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+        "action_map": {
+        "Authorization.roleAssignments.write": "AttachUserPolicy",
+        "Storage.storageAccounts.listKeys.action": "GetBucketPolicy",
+        "Storage.storageAccounts.blobServices.containers.blobs.read": "GetObject",
+        "Storage.storageAccounts.blobServices.containers.read": "ListBuckets",
+        "Insights.diagnosticSettings.delete": "StopLogging",
+        "Compute.virtualMachines.read": "DescribeInstances",
+        "Compute.virtualMachines.restart.action": "RestartInstances",
+        "Web.sites.read": "DescribeInstances",
+        "Web.sites.config.write": "ConfigChange",
+        "Web.sites.restart.action": "RestartInstances"
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "resourceId",
+            "template": "{resourceId}"
+        }
+    ]
+}

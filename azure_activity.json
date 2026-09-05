@@ -1,0 +1,169 @@
+{
+    "records": [
+        {
+            "time": "2025-10-01T08:00:00Z",
+            "caller": "priya@contoso.com",
+            "operationName": "Microsoft.Compute/virtualMachines/read",
+            "resourceProvider": "Microsoft.Compute",
+            "callerIpAddress": "10.0.5.22",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "priya@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Compute/virtualMachines/web-server-01",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T08:10:00Z",
+            "caller": "priya@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/listKeys/action",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "10.0.5.22",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "priya@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/internaldocs",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T08:30:00Z",
+            "caller": "deepak@contoso.com",
+            "operationName": "Microsoft.Web/sites/read",
+            "resourceProvider": "Microsoft.Web",
+            "callerIpAddress": "10.0.5.40",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "deepak@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Web/sites/api-backend",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:00:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Authorization/roleAssignments/write",
+            "resourceProvider": "Microsoft.Authorization",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/providers/Microsoft.Authorization/roleAssignments/owner-role-assignment",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:02:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Authorization/roleAssignments/write",
+            "resourceProvider": "Microsoft.Authorization",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/providers/Microsoft.Authorization/roleAssignments/contributor-role-svc-account",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:05:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/listKeys/action",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/customerpiidata",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:06:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/customerpiidata/blobServices/default/containers/customer-exports",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:08:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/customerpiidata/blobServices/default/containers/customer-exports/blobs/full_customer_dump.csv",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:10:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/financialreports/blobServices/default/containers/quarterly/blobs/Q3-revenue.xlsx",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:12:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/payrolldata/blobServices/default/containers/salaries/blobs/september-payroll.csv",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T09:15:00Z",
+            "caller": "amit@contoso.com",
+            "operationName": "Microsoft.Insights/diagnosticSettings/delete",
+            "resourceProvider": "Microsoft.Insights",
+            "callerIpAddress": "203.0.113.55",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "amit@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/providers/Microsoft.Insights/diagnosticSettings/activity-log-to-storage",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T10:00:00Z",
+            "caller": "priya@contoso.com",
+            "operationName": "Microsoft.Compute/virtualMachines/restart/action",
+            "resourceProvider": "Microsoft.Compute",
+            "callerIpAddress": "10.0.5.22",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "priya@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Compute/virtualMachines/web-server-01",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T10:30:00Z",
+            "caller": "deepak@contoso.com",
+            "operationName": "Microsoft.Web/sites/config/write",
+            "resourceProvider": "Microsoft.Web",
+            "callerIpAddress": "10.0.5.40",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "deepak@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Web/sites/api-backend/config/appsettings",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T11:00:00Z",
+            "caller": "priya@contoso.com",
+            "operationName": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+            "resourceProvider": "Microsoft.Storage",
+            "callerIpAddress": "10.0.5.22",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "priya@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Storage/storageAccounts/internaldocs/blobServices/default/containers/engineering/blobs/deploy-guide.md",
+            "resultType": "Success"
+        },
+        {
+            "time": "2025-10-01T11:30:00Z",
+            "caller": "deepak@contoso.com",
+            "operationName": "Microsoft.Web/sites/restart/action",
+            "resourceProvider": "Microsoft.Web",
+            "callerIpAddress": "10.0.5.40",
+            "location": "centralindia",
+            "identity": {"claims": {"name": "deepak@contoso.com"}},
+            "resourceId": "/subscriptions/sub-001/resourceGroups/prod-rg/providers/Microsoft.Web/sites/api-backend",
+            "resultType": "Success"
+        }
+    ]
+}

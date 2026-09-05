@@ -563,6 +563,36 @@ def detect_attack_chains(findings, sessions):
             if "RECONNAISSANCE" in rules_triggered:
                 chain["indicators"].append("Performed network reconnaissance")
             chains.append(chain)
+            
+    # Pattern 6: Privilege abuse (escalate, access, cover tracks)
+        has_escalation = "PRIVILEGE_ESCALATION" in rules_triggered
+        has_sensitive = "SENSITIVE_DATA_ACCESS" in rules_triggered
+        has_tampering = "AUDIT_TRAIL_TAMPERING" in rules_triggered
+        
+        # Only trigger if not already covered by another chain for this actor
+        actor_already_chained = any(
+            c["primary_actor"] == actor or c.get("secondary_actor") == actor
+            for c in chains
+        )
+        
+        if has_escalation and has_sensitive and not actor_already_chained:
+            chain = {
+                "chain_type": "PRIVILEGE_ABUSE",
+                "severity": "CRITICAL" if has_tampering else "HIGH",
+                "primary_actor": actor,
+                "secondary_actor": None,
+                "description": f"{actor} escalated privileges, accessed sensitive data" + (", and tampered with audit logs" if has_tampering else ""),
+                "findings": actor_findings,
+                "indicators": []
+            }
+            chain["indicators"].append("Privilege escalation before data access")
+            sensitive_count = len([f for f in actor_findings if f["rule"] == "SENSITIVE_DATA_ACCESS"])
+            chain["indicators"].append(f"Accessed {sensitive_count} sensitive resources")
+            if has_tampering:
+                chain["indicators"].append("Tampered with audit logging after data access")
+            if "IP_ANOMALY" in rules_triggered:
+                chain["indicators"].append("Activity from untrusted IP")
+            chains.append(chain)
 
     return chains
 

@@ -1,0 +1,63 @@
+{
+    "name": "AWS CloudTrail",
+    "file_format": "json",
+    "json_root": "Records",
+    "source_label": "CloudTrail",
+    "timestamp": {
+        "field": "eventTime"
+    },
+    "fields": {
+        "actor": {
+            "field": "userIdentity.userName",
+            "fallbacks": [
+                {"field": "userIdentity.invokedBy", "prefix": "service:"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "eventName"
+        },
+        "service": {
+            "field": "eventSource",
+            "replace": {".amazonaws.com": ""}
+        },
+        "source_ip": {
+            "field": "sourceIPAddress",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "awsRegion",
+            "default": "unknown"
+        },
+        "mfa_used": {
+            "field": "additionalEventData.MFAUsed",
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "requestParameters.policyArn",
+            "template": "policy:{requestParameters.policyArn|after:/} -> user:{requestParameters.userName|default:unknown}"
+        },
+        {
+            "when_field_exists": "requestParameters.bucketName",
+            "template": "s3:{requestParameters.bucketName}/{requestParameters.key|default:}"
+        },
+        {
+            "when_field_exists": "requestParameters.userName",
+            "template": "user:{requestParameters.userName}"
+        },
+        {
+            "when_field_exists": "requestParameters.stackName",
+            "template": "stack:{requestParameters.stackName}"
+        },
+        {
+            "when_field_exists": "requestParameters.name",
+            "template": "trail:{requestParameters.name}"
+        },
+        {
+            "when_field_exists": "requestParameters.groupName",
+            "template": "sg:{requestParameters.groupName}"
+        }
+    ]
+}

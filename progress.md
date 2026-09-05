@@ -185,3 +185,13 @@
 - Chat uses full investigation context for accurate answers
 - Chat history persists during session
 - Platform is now fully browser-based with interactive AI investigation
+
+## Day 24
+- Built generic_normalizer.py — config-driven log parsing framework
+- Created log_configs/ with CloudTrail, Azure, and GCP configs
+- Added action_map to translate platform-specific actions to common names
+- Added PRIVILEGE_ABUSE attack chain pattern
+- Azure Activity Log: fully detected with 6 findings and 1 attack chain
+- Fixed resolve_target to work without requestParameters (Azure compatibility)
+- Key achievement: adding a new cloud platform is now a 10-minute config file
+- Zero Python changes needed for new JSON-based log formats
