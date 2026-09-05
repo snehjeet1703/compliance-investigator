@@ -1,0 +1,50 @@
+{
+    "name": "Palo Alto Firewall Traffic Log",
+    "file_format": "json",
+    "json_root": "logs",
+    "source_label": "PaloAlto",
+    "timestamp": {
+        "field": "receive_time"
+    },
+    "fields": {
+        "actor": {
+            "field": "srcuser",
+            "fallbacks": [
+                {"field": "src", "prefix": "ip:"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "action"
+        },
+        "service": {
+            "field": "app",
+            "default": "firewall"
+        },
+        "source_ip": {
+            "field": "src",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "dstloc",
+            "default": "unknown"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "dst",
+            "template": "{dst}:{dstport}/{app}"
+        }
+    ],
+    "action_map": {
+        "allow": "GetObject",
+        "deny": "SSHLoginFailed",
+        "drop": "SSHLoginFailed",
+        "reset-client": "SSHLoginFailed",
+        "reset-server": "SSHLoginFailed",
+        "reset-both": "SSHLoginFailed"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Kubernetes Audit Log",
+    "file_format": "json",
+    "json_root": "items",
+    "source_label": "Kubernetes",
+    "timestamp": {
+        "field": "stageTimestamp"
+    },
+    "fields": {
+        "actor": {
+            "field": "user.username",
+            "fallbacks": [
+                {"field": "impersonatedUser.username", "prefix": "impersonated:"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "verb"
+        },
+        "service": {
+            "field": "objectRef.resource",
+            "default": "kubernetes"
+        },
+        "source_ip": {
+            "field": "sourceIPs.0",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "annotations.cluster",
+            "default": "default-cluster"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "objectRef.name",
+            "template": "{objectRef.namespace}/{objectRef.resource}/{objectRef.name}"
+        }
+    ],
+    "action_map": {
+        "create": "CreateUser",
+        "delete": "DeleteUser",
+        "patch": "AttachUserPolicy",
+        "get": "GetObject",
+        "list": "ListUsers"
+    }
+}

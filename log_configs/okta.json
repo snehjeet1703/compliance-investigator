@@ -1,0 +1,57 @@
+{
+    "name": "Okta System Log",
+    "file_format": "json",
+    "json_root": null,
+    "source_label": "Okta",
+    "timestamp": {
+        "field": "published"
+    },
+    "fields": {
+        "actor": {
+            "field": "actor.alternateId",
+            "fallbacks": [
+                {"field": "actor.displayName"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "eventType"
+        },
+        "service": {
+            "field": "eventType",
+            "default": "okta"
+        },
+        "source_ip": {
+            "field": "client.ipAddress",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "client.geographicalContext.country",
+            "default": "unknown"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "target",
+            "template": "{target.0.displayName}"
+        }
+    ],
+    "action_map": {
+        "user.session.start": "ConsoleLogin",
+        "user.authentication.sso": "ConsoleLogin",
+        "user.session.end": "SessionEnd",
+        "user.account.lock": "ConfigChange",
+        "user.mfa.factor.deactivate": "StopLogging",
+        "user.lifecycle.create": "CreateUser",
+        "user.lifecycle.deactivate": "DeleteUser",
+        "user.lifecycle.suspend": "ConfigChange",
+        "group.user_membership.add": "AttachUserPolicy",
+        "group.user_membership.remove": "DetachUserPolicy",
+        "application.user_membership.add": "AttachUserPolicy",
+        "policy.rule.update": "ConfigChange",
+        "system.api_token.create": "CreateAccessKey"
+    }
+}

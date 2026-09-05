@@ -1,0 +1,56 @@
+{
+    "name": "AWS GuardDuty",
+    "file_format": "json",
+    "json_root": "Findings",
+    "source_label": "GuardDuty",
+    "timestamp": {
+        "field": "updatedAt"
+    },
+    "fields": {
+        "actor": {
+            "field": "resource.accessKeyDetails.userName",
+            "fallbacks": [
+                {"field": "resource.instanceDetails.instanceId", "prefix": "instance:"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "type"
+        },
+        "service": {
+            "field": "service.serviceName",
+            "default": "guardduty"
+        },
+        "source_ip": {
+            "field": "service.action.networkConnectionAction.remoteIpDetails.ipAddressV4",
+            "default": "unknown"
+        },
+        "region": {
+            "field": "region",
+            "default": "unknown"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "resource.s3BucketDetails",
+            "template": "s3:{resource.s3BucketDetails.name}"
+        },
+        {
+            "when_field_exists": "resource.instanceDetails.instanceId",
+            "template": "instance:{resource.instanceDetails.instanceId}"
+        }
+    ],
+    "action_map": {
+        "UnauthorizedAccess:IAMUser/ConsoleLoginSuccess.B": "ConsoleLogin",
+        "UnauthorizedAccess:IAMUser/MaliciousIPCaller.Custom": "ConsoleLogin",
+        "Persistence:IAMUser/AnomalousBehavior": "CreateAccessKey",
+        "Exfiltration:S3/MaliciousIPCaller": "GetObject",
+        "Discovery:S3/MaliciousIPCaller.Custom": "ListBuckets",
+        "PrivilegeEscalation:IAMUser/AnomalousBehavior": "AttachUserPolicy",
+        "Stealth:IAMUser/CloudTrailLoggingDisabled": "StopLogging",
+        "Recon:IAMUser/MaliciousIPCaller.Custom": "ListUsers"
+    }
+}

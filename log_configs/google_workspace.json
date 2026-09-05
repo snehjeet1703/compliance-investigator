@@ -1,0 +1,57 @@
+{
+    "name": "Google Workspace Admin Audit",
+    "file_format": "json",
+    "json_root": "items",
+    "source_label": "GoogleWorkspace",
+    "timestamp": {
+        "field": "id.time"
+    },
+    "fields": {
+        "actor": {
+            "field": "actor.email",
+            "fallbacks": [
+                {"field": "actor.profileId", "prefix": "profile:"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "events.0.name"
+        },
+        "service": {
+            "field": "events.0.type",
+            "default": "workspace"
+        },
+        "source_ip": {
+            "field": "ipAddress",
+            "default": "unknown"
+        },
+        "region": {
+            "default": "global"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "events.0.parameters",
+            "template": "{events.0.name}"
+        }
+    ],
+    "action_map": {
+        "login_success": "ConsoleLogin",
+        "login_failure": "ConsoleLogin",
+        "CREATE_USER": "CreateUser",
+        "DELETE_USER": "DeleteUser",
+        "GRANT_ADMIN_PRIVILEGE": "AttachUserPolicy",
+        "REVOKE_ADMIN_PRIVILEGE": "DetachUserPolicy",
+        "CHANGE_PASSWORD": "ConfigChange",
+        "SUSPEND_USER": "ConfigChange",
+        "download": "GetObject",
+        "view": "GetObject",
+        "edit": "PutObject",
+        "delete": "DeleteObject",
+        "change_user_sharing": "PutBucketPolicy",
+        "change_document_visibility": "PutBucketPolicy"
+    }
+}

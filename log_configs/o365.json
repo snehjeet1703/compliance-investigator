@@ -1,0 +1,65 @@
+{
+    "name": "Microsoft 365 Unified Audit Log",
+    "file_format": "json",
+    "json_root": "records",
+    "source_label": "M365",
+    "timestamp": {
+        "field": "CreationTime"
+    },
+    "fields": {
+        "actor": {
+            "field": "UserId",
+            "fallbacks": [
+                {"field": "UserKey"},
+                {"value": "unknown"}
+            ]
+        },
+        "action": {
+            "field": "Operation"
+        },
+        "service": {
+            "field": "Workload",
+            "default": "unknown"
+        },
+        "source_ip": {
+            "field": "ClientIP",
+            "default": "unknown"
+        },
+        "region": {
+            "default": "global"
+        },
+        "mfa_used": {
+            "default": "N/A"
+        }
+    },
+    "target_rules": [
+        {
+            "when_field_exists": "SourceFileName",
+            "template": "file:{SiteUrl}/{SourceRelativeUrl}/{SourceFileName}"
+        },
+        {
+            "when_field_exists": "ObjectId",
+            "template": "{ObjectId}"
+        }
+    ],
+    "action_map": {
+        "UserLoggedIn": "ConsoleLogin",
+        "UserLoginFailed": "ConsoleLogin",
+        "FileDownloaded": "GetObject",
+        "FileAccessed": "GetObject",
+        "FileUploaded": "PutObject",
+        "FileDeleted": "DeleteObject",
+        "FileCopied": "GetObject",
+        "SharingSet": "PutBucketPolicy",
+        "AnonymousLinkCreated": "PutBucketPolicy",
+        "AddedToGroup": "AttachUserPolicy",
+        "Add member to role.": "AttachUserPolicy",
+        "Remove member from role.": "DetachUserPolicy",
+        "Set-Mailbox": "ConfigChange",
+        "New-InboxRule": "CreateUser",
+        "Set-InboxRule": "ConfigChange",
+        "MailItemsAccessed": "GetObject",
+        "SearchQueryInitiatedSharePoint": "ListBuckets",
+        "SearchQueryInitiatedExchange": "ListBuckets"
+    }
+}

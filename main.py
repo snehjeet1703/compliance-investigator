@@ -34,14 +34,37 @@ def detect_and_load(log_file):
         lines = load_app_logs(log_file)
         return normalize_all_app(lines)
     
-    # JSON files — detect which config to use
+    # JSON files — match filename to config
     if filename.endswith(".json"):
-        if "azure" in filename:
-            config = load_config("log_configs/azure_activity.json")
-        elif "gcp" in filename:
-            config = load_config("log_configs/gcp_audit.json")
-        else:
-            config = load_config("log_configs/cloudtrail.json")
+        config_mapping = {
+            "azure": "log_configs/azure_activity.json",
+            "gcp": "log_configs/gcp_audit.json",
+            "guardduty": "log_configs/guardduty.json",
+            "kubernetes": "log_configs/kubernetes.json",
+            "k8s": "log_configs/kubernetes.json",
+            "o365": "log_configs/o365.json",
+            "microsoft365": "log_configs/o365.json",
+            "m365": "log_configs/o365.json",
+            "workspace": "log_configs/google_workspace.json",
+            "google_workspace": "log_configs/google_workspace.json",
+            "okta": "log_configs/okta.json",
+            "paloalto": "log_configs/paloalto.json",
+            "firewall": "log_configs/paloalto.json",
+        }
+        
+        # Find matching config
+        config_path = None
+        for keyword, path in config_mapping.items():
+            if keyword in filename:
+                config_path = path
+                break
+        
+        # Default to CloudTrail
+        if not config_path:
+            config_path = "log_configs/cloudtrail.json"
+        
+        config = load_config(config_path)
+        print(f"    Using config: {config['name']}")
         return normalize_with_config(log_file, config)
     
     print(f"  Unknown log format: {log_file}")
